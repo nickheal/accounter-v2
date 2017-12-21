@@ -1,0 +1,40 @@
+.accounts-list {
+    list-style-type: none;
+
+    li {
+        a {
+            text-decoration: none;
+            color: $primaryColor;
+            transition: color 300ms ease-in-out;
+
+            &:after {
+                content: '\2192';
+                display: inline-block;
+                margin-left: .5em;
+                transition: transform 300ms ease-in-out;
+            }
+
+            &:hover {
+                color: $secondaryColor;
+
+                &:after {
+                    transform: translateX(50%);
+                }
+            }
+        }
+
+        margin-bottom: .5em;
+
+        &:last-child {
+            margin-top: 1em;
+            padding-top: 1em;
+            border-top: solid 1px $secondaryColor;
+
+            a {
+                &:after {
+                    content: none;
+                }
+            }
+        }
+    }
+}

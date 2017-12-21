@@ -1,0 +1,39 @@
+<template name="add_payment">
+    <section class="wrapper">
+        <h1>Add payment to {{ account.name }}</h1>
+
+        <form>
+            <div class="input-block">
+                <input name="description">
+                <label for="description">Description</label>
+            </div>
+            <div class="input-block">
+                <select name="category" required>
+                    <option value="house">House/rent</option>
+                    <option value="groceries">Groceries/house things</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="holidays">Holidays</option>
+                    <option value="car">Car</option>
+                    <option value="presents">Presents</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="category">Category</label>
+            </div>
+            <div class="input-block">
+                <input name="amount" type="number" min="0" step="0.01" required>
+                <label for="amount">Amount</label>
+            </div>
+            <div class="input-block">
+                <input name="date" type="date" required>
+                <label for="date">Date</label>
+            </div>
+            <div class="input-block">
+                <input name="time" type="time" required>
+                <label for="time">Time</label>
+            </div>
+
+            <button type="submit">Add</button>
+        </form>
+    </section>
+</template>

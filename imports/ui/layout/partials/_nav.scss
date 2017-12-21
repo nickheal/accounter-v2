@@ -1,0 +1,122 @@
+.main-nav {
+    background-color: $primaryColor;
+
+    & > .wrapper {
+        display: flex;
+    }
+
+    .user-info {
+        margin-left: auto;
+    }
+
+    a {
+        font-family: Raleway, sans-serif;
+        display: inline-block;
+        color: $white;
+        padding: .5em 1em;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $primaryColorLight;
+        }
+    }
+
+    .account-request-drop-down-button {
+        position: relative;
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        background: none;
+        border: 0;
+        color: $secondaryColor;
+        padding: .25em .5em;
+        background-image: url(/img/add-account.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+        &:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+            content: attr(data-length);
+            background: $red;
+            padding: .1em .3em;
+            border-radius: 999em;
+            color: $white;
+        }
+    }
+
+    .account-request-drop-down {
+        list-style-type: none;
+        position: absolute;
+        pointer-events: none;
+        background-color: $white;
+        border: solid 2px $primaryColor;
+        border-radius: 0 0 .5em .5em;
+        padding: .5em;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+
+        &.is-active {
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+        button {
+            background: none;
+            color: $green;
+            border: solid 1px $primaryColor;
+            border-radius: .2em;
+            padding: .25em .5em;
+            margin-left: 1em;
+            cursor: pointer;
+            transition: background-color 300ms ease-in-out;
+
+            &:hover {
+                background-color: $primaryColor;
+            }
+        }
+    }
+
+    .user-settings-button {
+        display: inline-block;
+        vertical-align: middle;
+        width: 1.25em;
+        height: 1.25em;
+        margin-left: .5em;
+        background: none;
+        border: 0;
+        color: $secondaryColor;
+        padding: .25em .5em;
+        background-image: url(/img/account-settings.svg);
+        background-size: 80%;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    #login-buttons {
+        a {
+            font-size: 0.7em;
+            margin-top: .48em;
+        }
+
+        .accounts-dialog {
+            top: 10px;
+            right: 0;
+            left: auto;
+
+            a {
+                color: $primaryColor;
+            }
+
+            .login-button {
+                background-color: $primaryColor;
+                border: none;
+            }
+        }
+    }
+}

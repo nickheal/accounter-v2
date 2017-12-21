@@ -1,0 +1,43 @@
+.wrapper {
+    width: 95%;
+    max-width: 100em;
+    margin: 0 auto;
+
+    &.full-on-mobile {
+        width: 100%;
+    }
+}
+
+section {
+    padding-top: 1em;
+}
+
+.two-column-layout {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * {
+        width: 100%;
+    }
+}
+
+@media (min-width: $mobile-large) {
+    .wrapper {
+        &.full-on-mobile {
+            width: 95%;
+        }
+    }
+}
+
+@media (min-width: $tablet-small) {
+    .two-column-layout {
+        & > * {
+            width: 49%;
+            margin-right: 2%;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.sub-sub-nav {
+    background-color: $white;
+    border-bottom: solid 2px $primaryColor;
+    box-shadow: 0px 10px 10px 0px rgba($black, .05);
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a,
+    p {
+        color: $primaryColor;
+        padding: .5em 1em;
+        line-height: 1.2;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}

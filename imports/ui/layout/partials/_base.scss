@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100%;
+}
+
+@media (max-width: 48em) {
+    .desktop-only {
+        display: none;
+    }
+}

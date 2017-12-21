@@ -1,0 +1,26 @@
+<template name="overview">
+    {{ #if currentUser }}
+        <header class="wrapper">
+            <h1>{{ account.name }} overview</h1>
+        </header>
+
+        <section class="wrapper">
+            {{ #if balance.length }}
+                {{ #each balance }}
+                    {{ name }}{{ amount }}
+                {{ /each }}
+            {{ else }}
+                <p>Account balanced!</p>
+            {{ /if }}
+
+            <div class="two-column-layout">
+                {{ > bar_chart graphdata=payments }}
+                {{ > pie_chart graphdata=payments }}
+            </div>
+        </section>
+    {{ else }}
+        <section class="wrapper">
+            <p>Please log in to view account overview.</p>
+        </section>
+    {{ /if }}
+</template>

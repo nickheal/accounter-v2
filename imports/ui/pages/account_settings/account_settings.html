@@ -1,0 +1,18 @@
+<template name="account_settings">
+    <div class="wrapper">
+        <h1>User details</h1>
+
+        <form>
+            <div class="input-block">
+                <input name="firstName" value="{{ payer.firstName }}" required>
+                <label for="firstName">First name</label>
+            </div>
+            <div class="input-block">
+                <input name="lastName" value="{{ payer.lastName }}" required>
+                <label for="lastName">First name</label>
+            </div>
+
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</template>

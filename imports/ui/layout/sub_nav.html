@@ -1,0 +1,11 @@
+<template name="sub_nav">
+    <nav class="sub-nav">
+        <div class="wrapper">
+            <p class="account-title">{{ account.name }}</p>
+            <a href="/{{ account._id.toHexString }}/overview">Overview</a>
+            <a href="/{{ account._id.toHexString }}/month/{{ year }}/{{ month }}">Detail</a>
+            <a href="/{{ account._id.toHexString }}/add-payment">Add payment</a>
+            <a href="/{{ account._id.toHexString }}/add-repayment">Add repayment</a>
+        </div>
+    </nav>
+</template>

@@ -1,0 +1,16 @@
+<template name="dashboard">
+    <section class="wrapper">
+        {{ #if currentUser }}
+            <h1>{{ payer.firstName }} {{ payer.lastName }}&rsquo;s Dashboard</h1>
+
+            <ul class="accounts-list">
+            {{ #each account in accounts }}
+                <li><a href="/{{ account._id.toHexString }}/overview">{{ account.name }}</a></li>
+            {{ /each }}
+                <li><a href="/create-account">&plus; New account</a></li>
+            </ul>
+        {{ else }}
+            <p>Please log in to view your dashboard.</p>
+        {{ /if }}
+    </section>
+</template>

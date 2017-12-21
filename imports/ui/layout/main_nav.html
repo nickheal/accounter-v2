@@ -1,0 +1,24 @@
+<template name="main_nav">
+    <nav class="main-nav">
+        <div class="wrapper full-on-mobile">
+            <a href="/">Accounter</a>
+
+            <div class="user-info">
+                {{ #if currentUser }}
+                    {{ #if accountrequests }}
+                        <button class="js-account-request-drop-down-button account-request-drop-down-button" data-length="{{ accountrequests.length }}"></button>
+                        <ul class="account-request-drop-down">
+                        {{ #each accountrequests }}
+                            <li>{{ name }}<button data-account="{{ id.toHexString }}">&#10004;</button></li>
+                        {{ /each }}
+                        </ul>
+                    {{ /if }}
+
+                    <a href="/account-settings" class="user-settings-button"></a>
+                {{ /if }}
+
+                {{> loginButtons}}
+            </div>
+        </div>
+    </nav>
+</template>

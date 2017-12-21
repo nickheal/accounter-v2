@@ -1,0 +1,30 @@
+<template name="add_repayment">
+    <section class="wrapper">
+        <h1>Add repayment to {{ account.name }}</h1>
+
+        <form>
+            <div class="input-block">
+                <select name="receiver">
+                    {{ #each payers }}
+                    <option value="{{ _id }}">{{ firstName }} {{ lastName }}</option>
+                    {{ /each }}
+                </select>
+                <label for="receiver">Payee</label>
+            </div>
+            <div class="input-block">
+                <input name="amount" type="number" min="0" step="0.01" required>
+                <label for="amount">Amount</label>
+            </div>
+            <div class="input-block">
+                <input name="date" type="date" required>
+                <label for="date">Date</label>
+            </div>
+            <div class="input-block">
+                <input name="time" type="time" required>
+                <label for="time">Time</label>
+            </div>
+
+            <button type="submit">Add</button>
+        </form>
+    </section>
+</template>

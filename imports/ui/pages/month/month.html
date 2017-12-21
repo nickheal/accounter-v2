@@ -1,0 +1,86 @@
+<template name="month">
+    {{ #if currentUser }}
+        <nav class="sub-sub-nav">
+            <div class="wrapper">
+                <a href="../{{ prev.year }}/{{ prev.month }}">&#8592;</a> 
+                <p>{{ month }} {{ year }}</p>
+                <a href="../{{ next.year }}/{{ next.month }}">&#8594;</a>
+            </div>
+        </nav>
+
+        <section class="wrapper">
+            <div class="two-column-layout">
+                <div>
+                    <div class="payments-segment">
+                        <h2>Payments</h2>
+                        <table class="month-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th class="desktop-only">Description</th>
+                                    <th>Amount</th>
+                                    <th class="desktop-only">Date</th>
+                                    <th class="desktop-only">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {{ #each payments }}
+                                {{ > month_paymentrow }}
+                            {{ /each }}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="repayments-segment">
+                        <h2>Repayments</h2>
+                        <table class="month-table">
+                            <thead>
+                                <tr>
+                                    <th>Payer</th>
+                                    <th>Payee</th>
+                                    <th>Amount</th>
+                                    <th class="desktop-only">Date</th>
+                                    <th class="desktop-only">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {{ #each repayments }}
+                                {{ > month_repaymentrow }}
+                            {{ /each }}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    {{ > line_graph graphdata=payments }}
+                </div>
+            </div>
+        </section>
+    {{ else }}
+        <section class="wrapper">
+            <p>Please log in to view your account.</p>
+        </section>
+    {{ /if }}
+</template>
+
+<template name="month_paymentrow">
+    <tr>
+        <td>{{ payername }}</td>
+        <td>{{ category }}</td>
+        <td class="desktop-only">{{ description }}</td>
+        <td>£{{ amount }}</td>
+        <td class="desktop-only">{{ day }}&bull;{{ month }}&bull;{{ year }}</td>
+        <td class="desktop-only">{{ hour }}:{{ minute }}</td>
+    </tr>
+</template>
+
+<template name="month_repaymentrow">
+    <tr>
+        <td>{{ payername }}</td>
+        <td>{{ receivername }}</td>
+        <td>£{{ amount }}</td>
+        <td class="desktop-only">{{ day }}&bull;{{ month }}&bull;{{ year }}</td>
+        <td class="desktop-only">{{ hour }}:{{ minute }}</td>
+    </tr>
+</template>

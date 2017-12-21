@@ -1,0 +1,76 @@
+form {
+    width: 100%;
+    max-width: 20em;
+
+    .input-block {
+        position: relative;
+        margin-top: 3em;
+        width: 100%;
+
+        label {
+            font-family: Raleway, sans-serif;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            opacity: .5;
+            pointer-events: none;
+            transition: top 300ms ease-in-out, transform 300ms ease-in-out, opacity 300ms ease-in-out;
+        }
+
+        input,
+        select {
+            width: 100%;
+            font-size: 1em;
+            border: 0;
+            border-bottom: solid 1px $primaryColor;
+            background: transparent;
+            padding: .5em;
+
+            &:focus,
+            &:valid {
+                outline: 0;
+
+                & + label {
+                    top: 0;
+                    transform: translateY(-100%) scale(.9);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    button {
+        position: relative;
+        font-size: 1em;
+        text-transform: uppercase;
+        background: $primaryColor;
+        border: none;
+        padding: .5em;
+        color: $white;
+        margin-top: 3em;
+        margin-bottom: 2em;
+        cursor: pointer;
+        overflow: hidden;
+        transition: background-color 300ms ease-in-out, padding 300ms ease-in-out;
+
+        &:after {
+            content: "+";
+            position: absolute;
+            top: 50%;
+            right: -10%;
+            transform: translate(100%, -50%);
+            transition: right 300ms ease-in-out, transform 300ms ease-in-out;
+        }
+
+        &:hover {
+            background-color: $primaryColorLight;
+            padding: .5em 1.5em .5em .5em;
+
+            &:after {
+                transform: translate(0, -50%);
+                right: .5em;
+            }
+        }
+    }
+}
